@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant Reservation</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+<header>
+    <h1><a class="noDecoration" href="index.html">Restaurant Reservation</a></h1>
+</header>
+<form action="#" class="padding">
+    Search Confirmation:
+    <input type="search" name="search">
+    <input type="submit">
+</form>
+<section class="padding">
+    <div class="border" id="home">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active "><a href="#reservations" data-toggle="tab">Reservations</a>
+            </li>
+            <li><a href="#seating" data-toggle="tab">Seating</a>
+            </li>
+            <li><a href="#contact" data-toggle="tab">Contact List</a>
+            </li>
+            <li><a href="#settings" data-toggle="tab">Settings</a>
+            </li>
+        </ul>
+        <div id="content" class="tab-content">
+            <div class="tab-pane active padding" id="reservations">
+                <div class="container">
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Confirmation</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>01/02/2014</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>01/02/2014</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                            <td>01/02/2014</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane padding" id="seating">
+                <div class="container">
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                        <tr>
+                            <th width="50">Table</th>
+                            <th width="30">Status</th>
+                            <th width="30">Size</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Open</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>open</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>closed</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>open</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>open</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>closed</td>
+                            <td>6</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane padding" id="contact">
+                <div class="container">
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                        <tr>
+                            <th width="30">Name</th>
+                            <th width="30">Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>july@example.com</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane padding" id="settings">
+                <form>
+                    <p class="row padding">
+                        <label class="col-xs-4">Date to be closed: </label>
+                        <input type="date" class="col-xs-8" />
+                    </p>
+
+                    <p class="row padding">
+                        <label class="col-xs-4">Daily Time </label>
+                        <input type="time" class="col-xs-8" />
+                    </p>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
