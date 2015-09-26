@@ -1,14 +1,86 @@
-<doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>test repo</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div>
-        <p>This is a test</p>
+
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant Reservation</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<header>
+    <h1><a class="noDecoration" href="index.html">Restaurant Reservation</a></h1>
+</header>
+
+<section class="padding">
+    <div class=" border" id="home">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#reserv" data-toggle="tab">Make a reservation</a>
+            </li>
+            <li><a href="#login" data-toggle="tab">Owner Login</a>
+            </li>
+        </ul>
+        <div id="content" class="tab-content padding">
+            <div class="tab-pane active" id="reserv">
+                <form>
+                    <ul>
+                        <li class="row padding">
+                            <label class="col-xs-4">Name</label>
+                            <input type="text" class="col-xs-8" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">DateTime - Local</label>
+                            <input class="col-xs-8" type="datetime-local" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">Email</label>
+                            <input class="col-xs-8" type="email" placeholder="example@example.com" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">Phone (format: xxxx-xxx-xxxx):</label>
+                            <input class="col-xs-8" placeholder="XXXX-XXX-XXXX" pattern="^\d{4}-\d{3}-\d{4}$" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">Number of People:</label>
+                            <input class="col-xs-8" type="number" max="7" min="1" value="1" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">Confirmation code</label>
+                            <input class="col-xs-8" type="text" placeholder="Optional" />
+                        </li>
+                    </ul>
+                    <input type="submit" />
+                    <button type="button" class="btn btn-link">Change Existing Reservation?</button>
+                </form>
+            </div>
+            <div class="tab-pane" id="login">
+                <form>
+                    <ul>
+                        <li class="row padding">
+                            <label class="col-xs-4">Username:</label>
+                            <input class="col-xs-8" type="text" required/>
+                        </li>
+                        <li class="row padding">
+                            <label class="col-xs-4">Password</label>
+                            <input class="col-xs-8" type="Password" required/>
+                        </li>
+                    </ul>
+                    <input type="submit" />
+                </form>
+            </div>
         </div>
-        <script src="index.js"></script>
-    </body>
+    </div>
+</section>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="scripts/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="scripts/lib/bootstrap.min.js"></script>
+</body>
+
 </html>
