@@ -1,0 +1,49 @@
+rsv
+
+CREATE TABLE reserve_db.rsv (
+  ID int(11) NOT NULL AUTO_INCREMENT,
+  GNAME varchar(45) DEFAULT NULL,
+  IDATE varchar(45) DEFAULT NULL,
+  EMAIL varchar(50) DEFAULT NULL,
+  PHONE varchar(10) DEFAULT NULL,
+  GUESTS INT(7) DEFAULT NULL,
+  PRIMARY KEY (ID)
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8;
+
+login
+
+CREATE TABLE reserve_db.login (
+  USERNAME varchar(45) NOT NULL,
+  PASSWORD varchar(45) NOT NULL,
+  PRIMARY KEY (USERNAME)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+settings
+
+CREATE TABLE reserve_db.settings (
+  DATE varchar(45) DEFAULT NULL,
+  TIME varchar(45) DEFAULT NULL,
+  PRIMARY KEY (DATE)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+RSV
+
+INSERT INTO reserve_db.rsv (GNAME, IDATE, EMAIL, PHONE, GUESTS) VALUES 
+('PENELOPE’,’2015-12-12 10:34 AM’,’PENELOPE.GUINESS@abc.com','2830338429',3),
+('JIGAR’,’2015-12-11 10:34 AM’,’JIGAR.R@abc.com','2887658429',4),
+('DAVIS’,’2015-11-11 01:34 PM’,’DAVIS.F@abc.com','9853738429',2),
+('TREK’,’2015-12-15 10:00 AM’,’TREK.R@abc.com','2830309876',2),
+('TONY’,’2015-12-16 10:00 AM’,’TONY.G@abc.com','2830000429',1),
+('SANDRA’,’2015-12-19 11:34 AM’,’SANDRA.J@abc.com','2232338429',3);
+
+
+LOGIN
+
+INSERT INTO reserve_db.login (`username`,`password`) VALUES ('username','password');
+
+SETTINGS
+
+INSERT INTO reserve_db.settings (DATE, TIME) 
+VALUES (‘2013-11-22','06:45 AM');
+
+
