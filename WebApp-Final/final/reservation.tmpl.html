@@ -1,0 +1,53 @@
+
+<form ng-if="!newVm.showSuccess" ng-submit="newVm.addReservation(newResForm.$valid)" novalidate name="newResForm" class="error animate-if">
+
+    <div class="input-group margin-bottom-sm col-md-6">
+        <label >Name</label>
+        <input class="form-control" type="text" placeholder="name" ng-model="newVm.newReservation.name" required  name="name">
+    </div>
+    <div ng-messages="newResForm.name.$error" ng-if="newResForm.name.$dirty">
+        <p ng-message="required">Required</p>
+    </div>
+
+    <div class="input-group margin-bottom-sm col-md-6">
+        <label >Date</label>
+        <input class="form-control" type="datetime-local" ng-model="newVm.newReservation.date" required min="2015-10-02T00:00:00" max="2015-12-31T00:00:00" name="date">
+    </div>
+    <div ng-messages="newResForm.date.$error" ng-if="newResForm.date.$dirty">
+        <p ng-message="required">Required</p>
+    </div>
+
+    <div class="input-group margin-bottom-sm col-md-6">
+        <label >Number of guests</label>
+        <input class="form-control" type="number" ng-model="newVm.newReservation.guests" placeholder="guests" required max="7" min="1" value="1" name="size">
+    </div>
+    <div ng-messages="newResForm.size.$error" ng-if="newResForm.size.$dirty">
+        <p ng-message="required">Required</p>
+        <p ng-message="min">Number of Guests must be greater than one</p>
+    </div>
+
+    <div class="input-group margin-bottom-sm col-md-6">
+        <label >Phone</label>
+        <input class="form-control" type="tel" placeholder="xxxxxxxxxx" ng-model="newVm.newReservation.phone" required name="contact" ng-pattern="/^[0-9]{10}$/">
+    </div>
+    <div ng-messages="newResForm.contact.$error" ng-if="newResForm.contact.$dirty">
+        <p ng-message="required">Required</p>
+        <p ng-message="pattern">Contact Number must be 10 digits</p>
+    </div>
+
+    <div class="input-group margin-bottom-sm col-md-6">
+        <label >Email</label>
+        <input class="form-control" type="email" ng-model="newVm.newReservation.email" placeholder="Email" name="email" required>
+    </div>
+    <div ng-messages="newResForm.email.$error" ng-if="newResForm.email.$dirty">
+        <p ng-message="required">Required</p>
+        <p ng-message="email">Email must be valid</p>
+    </div>
+
+    <button class="btn btn-danger btn-m btn-rate margin" ng-disabled="!newResForm.$valid" type="submit">Reserve</button>
+</form>
+
+<div ng-if="newVm.showSuccess" class="animate-if">
+    <h4>Please note your reservation ID</h4>
+    <h4>Reservation ID: {{newVm.reservationID}}</h4>
+</div>

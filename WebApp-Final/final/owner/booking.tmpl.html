@@ -1,0 +1,22 @@
+<div class="container">
+<input class="form-control " type="search" ng-model="rsvVm.searchStr" placeholder="Search Here...">
+<hr>
+<table class="table padding table-responsive table-striped ">
+    <thead>
+    <tr>
+        <th ng-click="rsvVm.sort.by= 'id'; rsvVm.sort.reverse = !rsvVm.sort.reverse;">Id</th>
+        <th ng-click="rsvVm.sort.by= 'name'; rsvVm.sort.reverse = !rsvVm.sort.reverse;">Name</th>
+        <th ng-click="rsvVm.sort.by= 'date'; rsvVm.sort.reverse = !rsvVm.sort.reverse;">Date</th>
+        <th ng-click="rsvVm.sort.by= 'guests'; rsvVm.sort.reverse = !rsvVm.sort.reverse;">Guests</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="emp in rsvVm.reservations | filter: rsvVm.searchStr | orderBy:rsvVm.sort.by: rsvVm.sort.reverse">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.date}}</td>
+        <td>{{emp.guests}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

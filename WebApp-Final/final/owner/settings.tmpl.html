@@ -1,0 +1,16 @@
+
+<form name="addEmpForm" ng-submit="mainVm.addEmployee(addEmpForm)" novalidate>
+  <div class="form-group tab-pane padding">
+    <label for="date">Update Date:</label>
+    <input type="date" name="date" ng-model="mainVm.newEmp.date" required class="form-control" id="date" >
+    </div>
+  </div>
+  <div class="form-group tab-pane padding">
+    <label for="time">Update Time:</label>
+    <input type="time" name="time" ng-model="mainVm.newEmp.time" required class="form-control" id="time" >
+  </div>
+  </div>
+  <div class="padding">
+  <button type="submit" class="btn btn-primary ">Update</button>
+</form>
+</div>
