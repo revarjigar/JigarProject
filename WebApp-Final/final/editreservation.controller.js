@@ -1,31 +1,54 @@
 
 (function(){
+
     angular
         .module('plunker')
-        .controller('NewController', NewController);
+        .controller('ChangeController', ChangeController);
 
-    NewController.$inject = ['mainService'];
-    function NewController(mainService){
+    ChangeController.$inject = ['mainService'];
+    function ChangeController(mainService){
 
-        var newVm = this;
-        newVm.reservationID = null;
-        newVm.showSuccess = false;
-        newVm.showError = false;
+        var changeVm = this;
 
-        newVm.addEdited = function(flag){
+        changeVm.editFlag = false;
+        changeVm.editedFlag = false;
+        changeVm.error = false;
+
+        changeVm.editReservation = function(flag){
 
             if(flag){
-                console.log(newVm.newReservation);
-                mainService.addEdited(newVm.newReservation).then(function(data){
-                    newVm.reservationID = data;
-                    newVm.showSuccess = true;
-                    newVm.newReservation = null;
+                changeVm.error = false;
+                mainService.getByID(changeVm.editReserve.id).then(function(data){
+
+                    if(data.id != null){
+                        changeVm.editReserve = data;
+                        changeVm.editReserve.date = new Date(data.date);
+                        changeVm.editFlag = true;
+                    } else
+                        changeVm.error = true;
 
                 }, function(err){
                     console.log(err);
-                    newVm.newReservation = null;
                 });
             }
-        }
+        };
+
+        changeVm.saveEdit = function(flag){
+
+            if(flag){
+                mainService.removeReservation(changeVm.editReserve.id).then(function(data) {
+                    console.log(data);
+                    mainService.addEdited(changeVm.editReserve).then(function(){
+                        changeVm.editFlag = false;
+                        changeVm.editedFlag = true;
+                        changeVm.editReserve = null;
+                    }, function(err){
+                        console.log(err);
+                    });
+                }, function (err) {
+                    console.log(err);
+                })
+            }
+        };
     }
 })();
