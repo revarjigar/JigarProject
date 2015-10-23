@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('settings')
+        .module('settings',[])
         .controller('ReservationsController', ReservationsController);
 
     ReservationsController.$inject = ['reservationService'];
@@ -24,5 +24,21 @@
                 });
         }
     }
+
+    angular
+        .module('plunker')
+        .filter('phone', phoneFilter);
+
+    function phoneFilter(){
+      return function(phoneStr){
+        var rez='';
+
+        if(phoneStr && phoneStr.length==10){
+          rez='('+ phoneStr.substring(0,3) +') '+phoneStr.substring(3,6)+'-'+phoneStr.substring(6);
+        }
+        return rez;
+      };
+    }
+
 })();
 

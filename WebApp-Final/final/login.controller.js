@@ -1,26 +1,42 @@
 
-(function(){
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('Authentication')
+    angular
+        .module('plunker')
+        .controller('LoginController', LoginController);
 
-    .controller('LoginController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope, $location, AuthenticationService) {
-            // reset login status
-            AuthenticationService.ClearCredentials();
+    LoginController.$inject = ['loginService', '$routeParams'];
 
-            $scope.login = function () {
-                $scope.dataLoading = true;
-                AuthenticationService.Login($scope.username, $scope.password, function(response) {
-                    if(response.success) {
-                        AuthenticationService.SetCredentials($scope.username, $scope.password);
-                        $location.path('/');
-                    } else {
-                        $scope.error = response.message;
-                        $scope.dataLoading = false;
+    function LoginController(loginService, routeParams) {
+        var loginVm = this;
+
+        loginVm.log= {};
+
+        loginVm.ownerLogin  = function()  {
+            var originalName = loginVm.log.username;
+            var originalPasswd = loginVm.log.password;
+
+            loginService
+                .ownerLogin()
+                .then(function(response) {
+                    loginVm.log = response[0];
+
+                    if ( originalName ==  loginVm.log.username  &&
+                        originalPasswd ==  loginVm.log.password) {
+                        window.location.href = 'http://localhost:8080/RESTDB/api/index1.html';
                     }
+                    else {
+                        alert ('Invalid Username or password');
+                        loginVm.log=null;
+                    }
+
+                }, function(error) {
+                    console.log(error);
                 });
-            };
-        }]);
+        }
+
+    }
+
+
 })();

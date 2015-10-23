@@ -30,12 +30,8 @@
         .when('/login', {
           templateUrl: 'login.tmpl.html',
                controller: 'LoginController',
-               hideMenus: true
+               controllerAs: 'loginVm'
         })
-           .when('/', {
-               controller: 'HomeController',
-               templateUrl: '/final/index1.html'
-           })
         .otherwise({
           redirectTo: '/reservation'
         });
