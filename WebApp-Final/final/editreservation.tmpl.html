@@ -1,0 +1,45 @@
+
+<form ng-if="!changeVm.editFlag && !changeVm.editedFlag" ng-submit="changeVm.editReservation(IDResForm.$valid)" novalidate name="IDResForm" class="error animate-if padding">
+
+    <div class="input-group margin-bottom-sm">
+        <label >Reservation ID</label>
+        <input class="form-control" type="number" title="Your reservation ID" placeholder="xxxx" required name="resvID" ng-model="changeVm.editReserve.reservation_id" >
+    </div>
+    <div ng-if="changeVm.error" >
+        <p>The reservation ID is invalid</p>
+    </div>
+    <div class="padding">
+    <button class="btn btn-default btn-m btn-danger "  ng-disabled="!IDResForm.$valid" type="submit">Change Reservation</button>
+        </div>
+</form>
+
+<div ng-if="changeVm.editFlag" class="animate-if  padding">
+
+    <form name="editResForm" ng-submit="changeVm.saveEdit(editResForm.$valid)">
+
+        <div class="input-group margin-bottom-sm">
+            <label >Date</label>
+            <input class="form-control" type="datetime-local" ng-model="changeVm.editReserve.date" name="date" min="2015-10-02T00:00:00" max="2015-12-31T00:00:00" title="Date of Reservation">
+        </div>
+        <div ng-messages="editResForm.date.$error" ng-if="editResForm.date.$dirty" class="error">
+            <p ng-message="required">Required</p>
+        </div>
+
+        <div class="input-group margin-bottom-sm">
+            <label >Guests</label>
+            <input class="form-control" type="number" ng-model="changeVm.editReserve.guests" name="size" required max="7" min="1" value="1" title="Guests">
+        </div>
+        <div ng-messages="editResForm.size.$error" ng-if="editResForm.size.$dirty" class="error">
+            <p ng-message="required">Required</p>
+            <p ng-message="number">Please enter a number</p>
+        </div>
+<div class="padding">
+        <button class="btn btn-default btn-m btn-rate btn-danger" ng-disabled="!editResForm.$valid" type="submit">Save</button>
+</div>
+    </form>
+</div>
+
+<div ng-if="changeVm.editedFlag" class="animate-if">
+
+    <h3>The changes have been saved</h3>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="settings">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header>
+    <h1>
+        <a class="noDecoration" href="index1.html">Restaurant Reservation</a>
+    </h1>
+</header>
+<nav>
+    <ul class="nav nav-pills ">
+        <li>
+            <a href="#/booking">Reservations</a>
+        </li>
+        <li>
+            <a href="#/contact">Contact List</a>
+        </li>
+        <li>
+            <a href="#/settings">Settings</a>
+        </li>
+    </ul>
+</nav>
+<div class="col-md" ng-view></div>
+<script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.7/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.4.7/angular-messages.js"></script>
+<script src="app1.js"></script>
+<script src="owner/booking.controller.js"></script>
+<script src="owner/booking.service.js"></script>
+<script src="login.controller.js"></script>
+<script src="login.service.js"></script>
+<script src="owner/settings.controller.js"></script>
+<script src="owner/settings.service.js"></script>
+
+</body>
+
+</html>

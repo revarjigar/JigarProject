@@ -1,0 +1,44 @@
+/* Styles go here */
+
+
+
+html {
+    background: #FFB012;
+}
+
+body {
+    background: #FFB012;
+}
+
+.container {
+    border-radius: 25px;
+}
+
+.padding {
+    list-style-type: none;
+    padding: 2%;
+}
+
+.table-striped {
+    background-color: #FFCE6C;
+}
+
+header {
+    background-color: #CF8A00;
+    padding: 2%;
+}
+
+section {
+    background-color: #FFCA60;
+}
+.noDecoration, a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+.nav{
+    background-color: #CF8A00;
+}
+.border{
+    border:1px solid;
+    border-radius: 0px;
+}
